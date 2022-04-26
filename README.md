@@ -102,7 +102,10 @@ As you can see, `distance` takes two pairs, `(x1, y1)` and `(x2, y2)`, and *dest
 - `origin`, i.e. `(0, 0)`, is matched against `(x1, y1)`, creating the bindings `x1 = 0` and `y1 = 0`.
 - the tuple `(3, 4)` is matched against `(x2, y2)`, creating the bindings `x2 = 3` and `y2 = 4`.
 
-The body of `distance`, `sqrt (...)` is then evaluated in a new scope where the variables defined about are bound. In the case of the above example:
+The body of `distance`, `sqrt (...)` is 
+
+
+evaluated in a new scope where the variables defined about are bound. In the case of the above example:
 
 ```elm
 -- call and bind
@@ -568,7 +571,7 @@ Passerine has a rich hygienic* syntactic macro system that extends the language 
 
 *Syntactic macros*, quite simply, are bits of code that *hygienically* produce more code when invoked at compile time. Macros use a small, simple-yet-powerful set of rules to transform code.
 
-> \* Having read Doug Hoyte's exellent [Let Over Lambda](https://letoverlambda.com/), I understand the raw power of a rich *unhygenic* macro system. However, such systems are hard to comprehend, and harder to master. Passerine aims to be as simple and powerful as possible without losing *transparency*: hygienic macro systems are much more transparent then their opaque unhygenic counterparts.
+> \* Having read Doug Hoyte's exellent [Let Over Lambda](https://letoverlambda.com/), I understand the raw power of a rich *unhygenic* macro system. However, such systems are hard to comprehend, and harder to master. Passerine aims to be as simple and powerful as possible without losing *transparency*: hygienic macro systems are much more transparent than their opaque unhygenic counterparts.
 
 #### Hygiene
 Extensions are defined with the `syntax` keyword, followed by some *argument patterns*, followed by the code that the captured arguments will be spliced into. Here's a simple example: we're using a macro to define `swap` operator:
